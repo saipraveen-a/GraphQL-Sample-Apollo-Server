@@ -19,3 +19,16 @@ and
 ```bash
 cd client && npm i && npm start
 ```
+
+## Corrections to Queries from tutorial
+
+    query XYZ {
+        launches {
+            launches {
+                mission {
+                    name
+                    missionPatch(size: LARGE)
+                }
+            }
+        }
+    }
