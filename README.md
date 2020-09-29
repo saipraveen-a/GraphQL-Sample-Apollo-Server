@@ -45,6 +45,7 @@ cd client && npm i && npm start
         login(email : "saipraveen.a.iiit@gmail.com") {
             email
             id
+            token
         }
     }
 
