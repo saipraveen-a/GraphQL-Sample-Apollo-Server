@@ -28,7 +28,7 @@ export interface GetLaunchList_launches_launches {
 }
 
 export interface GetLaunchList_launches {
-  __typename: "LaunchConnection";
+  __typename: "LaunchResponse";
   cursor: string;
   hasMore: boolean;
   launches: (GetLaunchList_launches_launches | null)[];

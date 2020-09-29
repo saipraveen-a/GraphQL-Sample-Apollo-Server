@@ -11,7 +11,7 @@ const typeDefs = gql`
       If you add a cursor here, it will only return results _after_ this cursor
       """
       after: String
-    ): LaunchConnection!
+    ): LaunchResponse!
     launch(id: ID!): Launch
     me: User
   }
@@ -40,7 +40,7 @@ const typeDefs = gql`
   last item in the list. Pass this cursor to the launches query to fetch results
   after these.
   """
-  type LaunchConnection {
+  type LaunchResponse {
     cursor: String!
     hasMore: Boolean!
     launches: [Launch]!
