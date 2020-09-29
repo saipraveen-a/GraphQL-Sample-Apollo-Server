@@ -20,7 +20,7 @@ and
 cd client && npm i && npm start
 ```
 
-## Corrections to Queries from tutorial
+## Sample Queries and Mutations
 
     query XYZ {
         launches {
@@ -29,6 +29,43 @@ cd client && npm i && npm start
                     name
                     missionPatch(size: LARGE)
                 }
+            }
+        }
+    }
+
+    query loggedInUser {
+        me {
+            email
+            id
+            profileImage
+	    }
+    }
+
+    mutation logIn {
+        login(email : "saipraveen.a.iiit@gmail.com") {
+            email
+            id
+        }
+    }
+
+    query GetLaunches {
+        launches(pageSize: 10) {
+            cursor
+            hasMore
+            launches {
+                mission {
+                    name
+                }
+            }
+        }
+    }
+
+    query GetLaunchById($id: ID!) {
+        launch(id: $id) {
+            id
+            rocket {
+                id
+                type
             }
         }
     }
