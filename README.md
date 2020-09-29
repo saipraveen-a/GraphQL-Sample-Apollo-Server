@@ -33,20 +33,24 @@ cd client && npm i && npm start
         }
     }
 
-    query loggedInUser {
-        me {
-            email
-            id
-            profileImage
-	    }
-    }
-
     mutation logIn {
         login(email : "saipraveen.a.iiit@gmail.com") {
             email
             id
             token
         }
+    }
+
+    Use the token obtained from the logIn mutation and pass it as a Header
+    {
+        "authorization": "some-random-token"
+    }
+    query loggedInUser {
+        me {
+            email
+            id
+            profileImage
+	    }
     }
 
     query GetLaunches {
@@ -69,4 +73,9 @@ cd client && npm i && npm start
                 type
             }
         }
+    }
+
+    To pass in the value for the variable id, from the Playground, add variables
+    {
+        "id": 60
     }
